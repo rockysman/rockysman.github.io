@@ -6,15 +6,31 @@
     <description>Recent content on Rocky&#39;s Blog</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.rockys.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于我</title>
       <link>https://www.rockys.xyz/about/</link>
-      <pubDate>Mon, 28 Apr 2025 00:00:00 +0800</pubDate>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://www.rockys.xyz/about/</guid>
-      <description>&lt;p&gt;你好！我是 Rocky，欢迎来到我的博客。
-这里记录了我的学习笔记、开发经验与生活点滴。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;-hi我是-rocky&#34;&gt;👋 Hi，我是 Rocky&lt;/h2&gt;
+&lt;p&gt;一名前端/后端开发者，爱好编程、阅读和写作，目前专注于 Web 技术、AI 应用探索。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🔭 目前在做：个人博客建设、AI 学习&lt;/li&gt;
+&lt;li&gt;🌱 正在学习：深度学习、YOLOv8、Scrum&lt;/li&gt;
+&lt;li&gt;📚 爱用工具：SiYuan、VSCode、Obsidian&lt;/li&gt;
+&lt;li&gt;✍️ 平时喜欢摘抄、写技术笔记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-联系我&#34;&gt;📬 联系我&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;code&gt;rockyswork@163.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/rockysman&#34;&gt;rockysman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;博客: &lt;a href=&#34;https://www.rockys.xyz&#34;&gt;rockys.xyz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-技能关键词&#34;&gt;🏆 技能关键词&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://skillicons.dev/icons?i=go,vue,tailwind,linux,docker,git,markdown&amp;perline=6&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>第一篇博客</title>
