@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>rocky's Blog</title><link>https://www.rockys.xyz/</link><description>Recent content on rocky's Blog</description><generator>Hugo -- 0.147.0</generator><language>zh-cn</language><lastBuildDate>Sun, 28 Apr 2024 12:00:00 +0800</lastBuildDate><atom:link href="https://www.rockys.xyz/index.xml" rel="self" type="application/rss+xml"/><item><title>第一篇博客</title><link>https://www.rockys.xyz/posts/first/</link><pubDate>Sun, 28 Apr 2024 12:00:00 +0800</pubDate><guid>https://www.rockys.xyz/posts/first/</guid><description>&lt;p>你好，世界！&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rocky&#39;s Blog</title>
+    <link>https://www.rockys.xyz/</link>
+    <description>Recent content on Rocky&#39;s Blog</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.rockys.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>https://www.rockys.xyz/about/</link>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0800</pubDate>
+      <guid>https://www.rockys.xyz/about/</guid>
+      <description>&lt;p&gt;你好！我是 Rocky，欢迎来到我的博客。
+这里记录了我的学习笔记、开发经验与生活点滴。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第一篇博客</title>
+      <link>https://www.rockys.xyz/posts/first/</link>
+      <pubDate>Sun, 28 Apr 2024 12:00:00 +0800</pubDate>
+      <guid>https://www.rockys.xyz/posts/first/</guid>
+      <description>&lt;p&gt;你好，世界！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
