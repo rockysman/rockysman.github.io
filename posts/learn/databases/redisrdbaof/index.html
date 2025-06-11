@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Redis持久化 - RDB&amp;AOF | Rocky&#39;s Blog</title>
 <meta name="keywords" content="learn, databases, redis">
-<meta name="description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!
-AOF 日志
-AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **
-优缺点
-Redis 选择先执行命令后写入主要有两个优点,** **
-
-不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的
-执行命令后写日志, 不会阻塞当前的写操作
-
-当然使用这种方式也存在两个潜在的风险点,
-
-写入数据后宕机, 日志丢失
-写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询
-
-写回策略
-从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **
-
-Always: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响
-Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡
-No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上
-
-三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **">
+<meta name="description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!">
 <meta name="author" content="rockys">
 <link rel="canonical" href="https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.93f625d739f1d6a5c6f20c146bc6a8d26b233492b34b2220c54b12fd46a04ded.css" integrity="sha256-k/Yl1znx1qXG8gwUa8ao0msjNJKzSyIgxUsS/UagTe0=" rel="preload stylesheet" as="style">
@@ -39,7 +18,7 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
 <link rel="mask-icon" href="https://blog.rockys.xyz/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/">
+<link rel="alternate" hreflang="zh" href="https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/">
 <noscript>
     <style>
         #theme-toggle,
@@ -79,13 +58,8 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
 </noscript><meta property="og:url" content="https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/">
   <meta property="og:site_name" content="Rocky&#39;s Blog">
   <meta property="og:title" content="Redis持久化 - RDB&AOF">
-  <meta property="og:description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!
-AOF 日志 AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **
-优缺点 Redis 选择先执行命令后写入主要有两个优点,** **
-不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的 执行命令后写日志, 不会阻塞当前的写操作 当然使用这种方式也存在两个潜在的风险点,
-写入数据后宕机, 日志丢失 写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询 写回策略 从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **
-Always: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响 Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡 No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上 三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **">
-  <meta property="og:locale" content="zh-cn">
+  <meta property="og:description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!">
+  <meta property="og:locale" content="zh-CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-11T21:04:00+08:00">
@@ -95,28 +69,7 @@ Always: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做�
     <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis持久化 - RDB&amp;AOF">
-<meta name="twitter:description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!
-AOF 日志
-AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **
-优缺点
-Redis 选择先执行命令后写入主要有两个优点,** **
-
-不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的
-执行命令后写日志, 不会阻塞当前的写操作
-
-当然使用这种方式也存在两个潜在的风险点,
-
-写入数据后宕机, 日志丢失
-写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询
-
-写回策略
-从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **
-
-Always: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响
-Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡
-No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上
-
-三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **">
+<meta name="twitter:description" content="Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!">
 
 
 <script type="application/ld+json">
@@ -145,13 +98,13 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
   "@type": "BlogPosting",
   "headline": "Redis持久化 - RDB\u0026AOF",
   "name": "Redis持久化 - RDB\u0026AOF",
-  "description": "Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!\nAOF 日志 AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **\n优缺点 Redis 选择先执行命令后写入主要有两个优点,** **\n不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的 执行命令后写日志, 不会阻塞当前的写操作 当然使用这种方式也存在两个潜在的风险点,\n写入数据后宕机, 日志丢失 写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询 写回策略 从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **\nAlways: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响 Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡 No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上 三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **\n",
+  "description": "Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!\n",
   "keywords": [
     "learn", "databases", "redis"
   ],
   "articleBody": "Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!\nAOF 日志 AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **\n优缺点 Redis 选择先执行命令后写入主要有两个优点,** **\n不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的 执行命令后写日志, 不会阻塞当前的写操作 当然使用这种方式也存在两个潜在的风险点,\n写入数据后宕机, 日志丢失 写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询 写回策略 从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **\nAlways: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响 Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡 No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上 三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **\nAOF 重写机制 为了避免 AOF 日志文件过大对性能造成影响, Redis 提供了一个把多条命令合并成一条减少 AOF 文件的体积,这个机制是如何压缩 AOF 体积的呢?\n我们知道 AOF 是再命令执行结束后追加到文件末尾的, 也就是说当我们多次反复修改一个 Key 的时候AOF 里面也会记录多条命令, 所以,压缩AOF 文件实际上就是把多个命令合并为一条, 记录最后的结果状态,需要恢复的时候也只需要执行这一条命令就可以了. 这样就大大减少了 AOF 的体积, 不过要完成所有合并所有命令, 需要遍历 AOF 记录, 并记录数据的最后状态,想想都麻烦, 如果这个操作需要阻塞Redis, 那是绝对不能接受的, 那 Redis 是如何实现的呢?** **\nAOF 重写过程 既然阻塞主线程不能接受, 所以实际上redis 在执行 AOF 命令的时候, 主线程会 fork (但是fork本身阻塞进程)出一个 叫做 bgrewriteaof 的子进程, fork 会把主线程的内存数据** **拷贝 (写实复制)一份给Bgrewriteaof, bgrewriteaof 根据拷贝内存中的数据创建新的 aof 日志, 这样就避免了阻塞主线程的问题,\n但是这又带来了新的问题, 由于重写过程不会阻塞主进程,所以主进程仍然可以处理任务, 这个时候如果有新的写操作, 就会导致主进程 和 bgrewriteaof 进程的数据不同\n原来 Redis 在 AOF重写过程中会记录两个日志: 除正常记录AOF 日志外, Redis 还会把日志记录到AOF 重写缓冲区, 等重写日志完成之后, 再把重写缓冲区的记录追加到重写日志的后面,这样既保证了宕机后, redis可以读取现有的AOF 日志恢复,又保证了在重写完成后 AOF 也不会丢失记录.\nRDB 快照 主从同步 ",
-  "wordCount" : "165",
-  "inLanguage": "en",
+  "wordCount" : "1292",
+  "inLanguage": "zh",
   "datePublished": "2025-06-11T21:04:00+08:00",
   "dateModified": "2025-06-11T21:04:00+08:00",
   "author":{
@@ -246,11 +199,11 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://blog.rockys.xyz/">Home</a>&nbsp;»&nbsp;<a href="https://blog.rockys.xyz/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://blog.rockys.xyz/">主页</a>&nbsp;»&nbsp;<a href="https://blog.rockys.xyz/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Redis持久化 - RDB&amp;AOF
     </h1>
-    <div class="post-meta"><span title='2025-06-11 21:04:00 +0800 CST'>June 11, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;165 words&nbsp;·&nbsp;rockys
+    <div class="post-meta"><span title='2025-06-11 21:04:00 +0800 CST'>六月 11, 2025</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;1292 字&nbsp;·&nbsp;rockys
 
 </div>
   </header> 
@@ -297,12 +250,12 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://blog.rockys.xyz/posts/books/%E9%9E%8B%E7%8B%97/">
-    <span class="title">« Prev</span>
+    <span class="title">« 上一页</span>
     <br>
     <span>《鞋狗》</span>
   </a>
   <a class="next" href="https://blog.rockys.xyz/posts/books/%E6%95%8F%E6%8D%B7%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/">
-    <span class="title">Next »</span>
+    <span class="title">下一页 »</span>
     <br>
     <span>《敏捷修炼之道》</span>
   </a>
@@ -396,12 +349,12 @@ No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
+        copybutton.innerHTML = '复制';
 
         function copyingDone() {
-            copybutton.innerHTML = 'copied!';
+            copybutton.innerHTML = '已复制！';
             setTimeout(() => {
-                copybutton.innerHTML = 'copy';
+                copybutton.innerHTML = '复制';
             }, 2000);
         }
 
