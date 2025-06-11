@@ -233,7 +233,7 @@
 <p>为了避免 AOF 日志文件过大对性能造成影响, Redis 提供了一个把多条命令合并成一条减少 AOF 文件的体积,这个机制是如何压缩 AOF 体积的呢?</p>
 <p>我们知道 AOF 是再命令执行结束后追加到文件末尾的, 也就是说当我们多次反复修改一个 Key 的时候AOF 里面也会记录多条命令, 所以,压缩AOF 文件实际上就是把多个命令合并为一条, 记录最后的结果状态,需要恢复的时候也只需要执行这一条命令就可以了. 这样就大大减少了 AOF 的体积, 不过要完成所有合并所有命令, 需要遍历 AOF 记录, 并记录数据的最后状态,想想都麻烦, 如果这个操作需要阻塞Redis, 那是绝对不能接受的, 那 Redis 是如何实现的呢?** **</p>
 <h4 id="aof-重写过程">AOF 重写过程<a hidden class="anchor" aria-hidden="true" href="#aof-重写过程">#</a></h4>
-<p>既然阻塞主线程不能接受, 所以实际上redis 在执行 AOF 命令的时候, 主线程会 fork (但是fork本身阻塞进程)出一个 叫做 bgrewriteaof 的子进程, fork 会把主线程的内存数据** **<!-- raw HTML omitted -->拷贝<!-- raw HTML omitted --> (写实复制)一份给Bgrewriteaof, bgrewriteaof 根据拷贝内存中的数据创建新的 aof 日志, 这样就避免了阻塞主线程的问题,</p>
+<p>既然阻塞主线程不能接受, 所以实际上redis 在执行 AOF 命令的时候, 主线程会 fork (但是fork本身阻塞进程)出一个 叫做 bgrewriteaof 的子进程, fork 会把主线程的内存数据** **拷贝 (写实复制)一份给Bgrewriteaof, bgrewriteaof 根据拷贝内存中的数据创建新的 aof 日志, 这样就避免了阻塞主线程的问题,</p>
 <p>但是这又带来了新的问题, 由于重写过程不会阻塞主进程,所以主进程仍然可以处理任务, 这个时候如果有新的写操作, 就会导致主进程 和 bgrewriteaof 进程的数据不同</p>
 <p>原来 Redis 在 AOF重写过程中会记录两个日志: 除正常记录AOF 日志外, Redis 还会把日志记录到AOF 重写缓冲区, 等重写日志完成之后, 再把重写缓冲区的记录追加到重写日志的后面,这样既保证了宕机后, redis可以读取现有的AOF 日志恢复,又保证了在重写完成后 AOF 也不会丢失记录.</p>
 <h2 id="rdb-快照">RDB 快照<a hidden class="anchor" aria-hidden="true" href="#rdb-快照">#</a></h2>
