@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.rockys.xyz/categories/databases/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/tags/databases/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/tags/learn/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/posts/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/tags/redis/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.rockys.xyz/posts/books/%E5%A5%88%E9%A3%9E%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2025-06-11T21:04:00+08:00</lastmod>
   </url><url>
@@ -14,28 +35,7 @@
     <loc>https://blog.rockys.xyz/tags/books/</loc>
     <lastmod>2025-06-11T21:04:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.rockys.xyz/categories/databases/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/tags/databases/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/tags/learn/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/posts/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
     <loc>https://blog.rockys.xyz/tags/read/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/tags/redis/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</loc>
-    <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/</loc>
     <lastmod>2025-06-11T21:04:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.rockys.xyz/tags/</loc>

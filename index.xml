@@ -6,8 +6,15 @@
     <description>Recent content on Rocky&#39;s Blog</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Jun 2025 21:04:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 22:04:00 +0800</lastBuildDate>
     <atom:link href="https://blog.rockys.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis持久化 - RDB&amp;AOF</title>
+      <link>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</link>
+      <pubDate>Wed, 11 Jun 2025 22:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</guid>
+      <description>&lt;p&gt;Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!&lt;/p&gt;</description>
+    </item>
     <item>
       <title>《奈飞文化手册》</title>
       <link>https://blog.rockys.xyz/posts/books/%E5%A5%88%E9%A3%9E%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C/</link>
@@ -47,13 +54,6 @@
 &lt;li&gt;一切都会改变，只是时间问题&lt;/li&gt;
 &lt;li&gt;我们都要成为丛林中的能手&lt;/li&gt;
 &lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>Redis持久化 - RDB&amp;AOF</title>
-      <link>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</link>
-      <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
-      <guid>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</guid>
-      <description>&lt;p&gt;Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我</title>

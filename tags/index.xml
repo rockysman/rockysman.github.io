@@ -6,8 +6,29 @@
     <description>Recent content in 标签 on Rocky&#39;s Blog</description>
     <generator>Hugo -- 0.147.8</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Jun 2025 21:04:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 22:04:00 +0800</lastBuildDate>
     <atom:link href="https://blog.rockys.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Databases</title>
+      <link>https://blog.rockys.xyz/tags/databases/</link>
+      <pubDate>Wed, 11 Jun 2025 22:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/tags/databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learn</title>
+      <link>https://blog.rockys.xyz/tags/learn/</link>
+      <pubDate>Wed, 11 Jun 2025 22:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/tags/learn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>https://blog.rockys.xyz/tags/redis/</link>
+      <pubDate>Wed, 11 Jun 2025 22:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/tags/redis/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Books</title>
       <link>https://blog.rockys.xyz/tags/books/</link>
@@ -16,31 +37,10 @@
       <description></description>
     </item>
     <item>
-      <title>Databases</title>
-      <link>https://blog.rockys.xyz/tags/databases/</link>
-      <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
-      <guid>https://blog.rockys.xyz/tags/databases/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Learn</title>
-      <link>https://blog.rockys.xyz/tags/learn/</link>
-      <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
-      <guid>https://blog.rockys.xyz/tags/learn/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Read</title>
       <link>https://blog.rockys.xyz/tags/read/</link>
       <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
       <guid>https://blog.rockys.xyz/tags/read/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Redis</title>
-      <link>https://blog.rockys.xyz/tags/redis/</link>
-      <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
-      <guid>https://blog.rockys.xyz/tags/redis/</guid>
       <description></description>
     </item>
   </channel>
