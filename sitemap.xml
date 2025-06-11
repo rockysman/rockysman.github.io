@@ -17,10 +17,13 @@
     <loc>https://blog.rockys.xyz/tags/redis/</loc>
     <lastmod>2025-06-11T22:04:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</loc>
+    <loc>https://blog.rockys.xyz/posts/learn/databases/redis-rdb-aof/</loc>
     <lastmod>2025-06-11T22:04:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.rockys.xyz/</loc>
+    <lastmod>2025-06-11T22:04:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.rockys.xyz/tags/</loc>
     <lastmod>2025-06-11T22:04:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.rockys.xyz/posts/books/%E5%A5%88%E9%A3%9E%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C/</loc>
@@ -37,9 +40,6 @@
   </url><url>
     <loc>https://blog.rockys.xyz/tags/read/</loc>
     <lastmod>2025-06-11T21:04:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.rockys.xyz/tags/</loc>
-    <lastmod>2025-04-28T18:27:32+08:00</lastmod>
   </url><url>
     <loc>https://blog.rockys.xyz/about/</loc>
     <lastmod>2025-04-28T00:00:00+00:00</lastmod>
