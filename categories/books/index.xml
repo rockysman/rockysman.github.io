@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Books on Rocky&#39;s Blog</title>
+    <link>https://blog.rockys.xyz/categories/books/</link>
+    <description>Recent content in Books on Rocky&#39;s Blog</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Apr 2024 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rockys.xyz/categories/books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《敏捷修炼之道》</title>
+      <link>https://blog.rockys.xyz/posts/%E6%95%8F%E6%8D%B7%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</link>
+      <pubDate>Sun, 28 Apr 2024 12:00:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/posts/%E6%95%8F%E6%8D%B7%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</guid>
+      <description>&lt;h1 id=&#34;敏捷修炼之道&#34;&gt;敏捷修炼之道&lt;/h1&gt;
+&lt;h2 id=&#34;敏捷的精神&#34;&gt;敏捷的精神&lt;/h2&gt;
+&lt;p&gt;以人为本、团队合作、快速相应变化和可工作的软件作为宗旨的开发方式&lt;/p&gt;
+&lt;h3 id=&#34;具备职业精神&#34;&gt;具备职业精神&lt;/h3&gt;
+&lt;p&gt;敏捷方法可以快速的响应变化，强调团队合作，让人们专注于具体可行的目标，是敏捷的精神。它将软件开发的重点转移到了一种更加自然和可持续的开发方式上去。&lt;/p&gt;
+&lt;h3 id=&#34;持续前进&#34;&gt;持续前进&lt;/h3&gt;
+&lt;p&gt;强调团队中的每一个人都必须具有职业精神，并且希望项目能够成功，它并不要求所有人都大神，但是必须具有专业的工作态度，这也意味着测试和收集需求将会贯穿整个生命周期。持续开发，持续反馈立即修复，这是敏捷开发的重点所在。&lt;/p&gt;
+&lt;h3 id=&#34;为什么要持续前进&#34;&gt;为什么要持续前进？&lt;/h3&gt;
+&lt;p&gt;软件开发是一项非常复杂的智力活动，你遗留下来的任何问题要么侥幸不会发生意外，要么情况会变得更糟，慢慢恶化直到失去控制，当问题积累到一定程度时，事情就会变得难以解决，最后无法扭转，面对这样的问题，唯一的方法是持续不断地推进系统前进和完善。&lt;/p&gt;
+&lt;p&gt;所以，你要防微杜渐，把问题消灭在萌芽状态，你要碳素未知的领域，在大量成本投入之前先确定可行性，你要知错能改，在事实面前主动承认自己的问题，，你要能自我反省，经常编码实战，加强团队协作精神，一开始可能会不适应。因为这与之前有太多的不同，但是只要能行动起来，习惯了就能得心应手。&lt;/p&gt;
+&lt;h2 id=&#34;敏捷高效软件开发之道&#34;&gt;敏捷－高效软件开发之道&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不管路走了多远，错了就要重新返回&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;这句土耳其谚语的含义显而易见，你也会认同这是软件开发应该遵守的原则，但是很多时候，开发人员（包括我们）发现自己走错路之后却不愿意回头，而是抱着迟早会步入正轨的侥幸心理，继续错下去，人们回想也许差不多少吧，也许错误不想想象的那么严重，假设软件开发是一个确定的、线性的过程，我们随时可以撤回来，如同谚语中所说的那样，然而，并不是。&lt;/p&gt;
+&lt;p&gt;相反，软件开发更像是在冲浪&amp;mdash;-一直处于动态、不断变化的环境中，大海本身无法预知，充满风险，并且海里还有鲨鱼出没&lt;/p&gt;
+&lt;p&gt;在软件开发领域中在项目研发过程中出现的需求变化和挑战就是你在冲浪时要应对的海浪&amp;ndash;他们从不停止并且不断变化，像波浪一样，在不同的业务领域和应用下，软件项目具有不同的形式，带来了不同的挑战甚至还有不同的鲨鱼以各种伪装出没。&lt;/p&gt;
+&lt;p&gt;软件项目的成败，依赖于整个项目团队中所有的开发成员的技术水平 ， 对他们的培训，以及他们各自能力的高低，就像一个成功的冲浪手一样，开发人员也是必须技术扎实、懂得掌握平衡和能够敏捷行事的人，不过是意料之中的波浪冲击，还是意料之外的设计失败，在这两种状况下敏捷都意味着可以快速的适应变化。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;敏捷开发宣言：&lt;/p&gt;
+&lt;p&gt;我们正在通过亲身的实践和帮助他人实践，揭示了一些更好的软件开发方法，通过这项工作，我们认为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;个体和交互胜过过程和工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可工作的软件胜过面面俱到的文档&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户协作胜过合同谈判&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;响应变化胜过遵循计划&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;虽然右项也有价值，但是我们认为左项具有更大的价值&lt;/p&gt;
+&lt;p&gt;敏捷宣言作者，2001年版权所有。更多详细信息和访问  敏捷软件开发宣言&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>
