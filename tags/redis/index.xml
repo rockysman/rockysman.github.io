@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Redis on Rocky&#39;s Blog</title>
+    <link>https://blog.rockys.xyz/tags/redis/</link>
+    <description>Recent content in Redis on Rocky&#39;s Blog</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Jun 2025 21:04:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rockys.xyz/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis持久化 - RDB&amp;AOF</title>
+      <link>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</link>
+      <pubDate>Wed, 11 Jun 2025 21:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/posts/learn/databases/redisrdbaof/</guid>
+      <description>&lt;p&gt;Redis 持久化有两个选项,分别是 AOF 日志 和 RDB 快照, 两个持久化方式可以让 redis 宕机后基本(为什么不是一定)不丢失数据, 同时也是 Redis 主从同步的基础, 今天让我们一起学习一下两种持久发方式有啥不同.什么场景下应该使用那种方式吧!&lt;/p&gt;
+&lt;h2 id=&#34;aof-日志&#34;&gt;AOF 日志&lt;/h2&gt;
+&lt;p&gt;AOF 是通过记录执行过的 Redis 命令来保存 Redis 数据的, 和主流的数据库(例如 Mysql 通过写前日志和两阶段提交，实现数据和逻辑的一致性)所采用的写前日志(WAL)不同, AOF 是先执行 Redis 命令, 执行成功后写入,** **&lt;/p&gt;
+&lt;h3 id=&#34;优缺点&#34;&gt;优缺点&lt;/h3&gt;
+&lt;p&gt;Redis 选择先执行命令后写入主要有两个优点,** **&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不用判断 Redis 命令的语法是否正确, 执行成功后的命令一定是正确的&lt;/li&gt;
+&lt;li&gt;执行命令后写日志, 不会阻塞当前的写操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然使用这种方式也存在两个潜在的风险点,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写入数据后宕机, 日志丢失&lt;/li&gt;
+&lt;li&gt;写日志操作仍在主进程上操作, 虽然不会阻塞当前命令, 但是仍然回阻塞下一次查询&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;写回策略&#34;&gt;写回策略&lt;/h3&gt;
+&lt;p&gt;从上面两个风险点可以发现, 问题都出现在 AOF 写回磁盘的时候, 所以为了避免写入日志对于 redis 性能的影响. 给我们提供了三个选择, 也就是 appendfsync 这个参数的三个可选值** **&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always: 同步写回, 也就是命令执行之后马上写入磁盘, 可以做到基本不丢数据, 但是因为每次都要写入磁盘所以性能会受到较大影响&lt;/li&gt;
+&lt;li&gt;Everysec: 每秒写回, 可以先把日志记录到内存的缓冲区, 然后每隔一秒保存到磁盘上, 算是再性能和数据之间保持了一个平衡&lt;/li&gt;
+&lt;li&gt;No: 操作系统控制写回, redis 只把日志记录到内存缓冲区, 由操作系统决定何时将数据刷写到盘上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;三种写回粗略,各有利弊,没法做到完美, 要跟据实际场景才能作出选择, 想要性能高同时对数据不敏感, 就选择 No, 想要数据安全丢失的可能性最小,就使用Always, 允许数据部分丢失且对性能要求又较高时就选Everysec** **&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
