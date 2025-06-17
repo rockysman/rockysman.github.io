@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Go on Rocky&#39;s Blog</title>
+    <link>https://blog.rockys.xyz/tags/go/</link>
+    <description>Recent content in Go on Rocky&#39;s Blog</description>
+    <generator>Hugo -- 0.147.8</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 17 Jun 2025 16:04:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rockys.xyz/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go 语言 net 包深度解析：构建高性能网络服务</title>
+      <link>https://blog.rockys.xyz/posts/learn/lang/go/go-net/</link>
+      <pubDate>Tue, 17 Jun 2025 16:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/posts/learn/lang/go/go-net/</guid>
+      <description>&lt;h1&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;引言为什么选择-go-进行网络编程&#34;&gt;引言：为什么选择 Go 进行网络编程&lt;/h2&gt;
+&lt;p&gt;Go 语言自诞生以来就以其卓越的并发模型和简洁的网络编程接口在服务器端开发领域广受欢迎。&lt;code&gt;net&lt;/code&gt; 包作为 Go 标准库中网络编程的核心组件，提供了从底层套接字操作到高层网络抽象的全套工具。根据 2022 年 Stack Overflow 开发者调查，Go 在最受欢迎编程语言中排名前 10，其中网络服务开发是其最主要应用场景之一。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
