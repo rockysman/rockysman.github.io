@@ -18,14 +18,11 @@
 &lt;p&gt;Go 语言自诞生以来就以其卓越的并发模型和简洁的网络编程接口在服务器端开发领域广受欢迎。&lt;code&gt;net&lt;/code&gt; 包作为 Go 标准库中网络编程的核心组件，提供了从底层套接字操作到高层网络抽象的全套工具。根据 2022 年 Stack Overflow 开发者调查，Go 在最受欢迎编程语言中排名前 10，其中网络服务开发是其最主要应用场景之一。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>深入解析 Cobra：构建高效 Go CLI 工具的最佳实践</title>
+      <title>新手程序员如何用Cobra快速搭建Go命令行工具 </title>
       <link>https://blog.rockys.xyz/posts/learn/lang/go/go-cobra/</link>
       <pubDate>Tue, 17 Jun 2025 16:04:00 +0800</pubDate>
       <guid>https://blog.rockys.xyz/posts/learn/lang/go/go-cobra/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;The art of command line is the art of human-computer interaction.&amp;rdquo; —— 匿名CLI开发者&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-&lt;p&gt;在Go生态中，Cobra如同瑞士军刀般的存在，支撑着Kubernetes、Hugo、Docker等顶级项目的命令行交互。本文将深入解析其设计哲学，揭示如何用2000行精炼代码实现现代CLI框架的所有核心功能。&lt;/p&gt;</description>
+      <description>&lt;p&gt;凌晨三点的显示器蓝光里，我第5次重写git风格的子命令解析逻辑时，同事丢来一行命令：&lt;code&gt;cobra init&lt;/code&gt;。三分钟后，看着自动生成的标准化项目结构，我默默删掉了自己200行的flag解析代码。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
