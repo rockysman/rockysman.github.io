@@ -17,5 +17,14 @@
 &lt;h2 id=&#34;引言为什么选择-go-进行网络编程&#34;&gt;引言：为什么选择 Go 进行网络编程&lt;/h2&gt;
 &lt;p&gt;Go 语言自诞生以来就以其卓越的并发模型和简洁的网络编程接口在服务器端开发领域广受欢迎。&lt;code&gt;net&lt;/code&gt; 包作为 Go 标准库中网络编程的核心组件，提供了从底层套接字操作到高层网络抽象的全套工具。根据 2022 年 Stack Overflow 开发者调查，Go 在最受欢迎编程语言中排名前 10，其中网络服务开发是其最主要应用场景之一。&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>深入解析 Cobra：构建高效 Go CLI 工具的最佳实践</title>
+      <link>https://blog.rockys.xyz/posts/learn/lang/go/go-cobra/</link>
+      <pubDate>Tue, 17 Jun 2025 16:04:00 +0800</pubDate>
+      <guid>https://blog.rockys.xyz/posts/learn/lang/go/go-cobra/</guid>
+      <description>&lt;h2 id=&#34;1-引言cobra-包简介与应用场景&#34;&gt;1. 引言：Cobra 包简介与应用场景&lt;/h2&gt;
+&lt;h3 id=&#34;什么是-cobra-包&#34;&gt;什么是 Cobra 包？&lt;/h3&gt;
+&lt;p&gt;Cobra 是一个用于 Go 语言的强大 CLI (Command Line Interface) 库，由 Steve Francia (spf13) 创建，现已成为 Kubernetes、Docker、Hugo 等知名项目的 CLI 基础框架。它提供了构建现代化命令行工具所需的所有功能。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
